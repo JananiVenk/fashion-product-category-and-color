@@ -6,7 +6,7 @@ from app.main import app
 client=TestClient(app)
 
 def test_process_image():
-    with open(os.path.join(root_dir,"images/10006.jpg", 'rb')) as image_file:
+    with open(os.path.join(root_dir,"images/10006.jpg"), 'rb') as image_file:
         files = {"file": ('10006.jpg', image_file, "image/jpg")}
         response = client.post("http://127.0.0.1:8012/predict", files=files)
         assert response.status_code == 200
