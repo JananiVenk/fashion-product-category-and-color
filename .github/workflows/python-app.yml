@@ -31,7 +31,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip freeze > requirements.txt   
-        pip install pytest fastapi httpx uvicorn torch opencv-python
+        pip install pytest fastapi httpx torch opencv-python pillow scikit-learn pandas torchvision jinja2 python-multipart
     - name: Run pytest
       run: | 
         pytest
