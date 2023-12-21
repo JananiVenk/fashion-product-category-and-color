@@ -75,8 +75,8 @@ subnet = Net1()
 model_path_1 = os.path.join(os.path.dirname(__file__), 'subcategory.pth')
 subnet.load_state_dict(torch.load(model_path_1, map_location=torch.device('cpu')))
 subnet.eval()
-
-with open("color.pkl", "rb") as f:
+path=os.path.join(os.path.dirname(__file__), 'color.pkl')
+with open(path, "rb") as f:
     clf = pickle.load(f)
 
 @app.get("/", response_class=HTMLResponse)
