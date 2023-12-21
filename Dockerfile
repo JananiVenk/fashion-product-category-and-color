@@ -6,7 +6,8 @@ WORKDIR /code
 
 COPY ./app/category.pth /code/app/category.pth
 RUN pip install scikit-learn==0.22.2
-RUN pip install fastapi uvicorn torch opencv-python pillow pandas torchvision jinja2 python-multipart fast-colorthief
+RUN pip install fast-colorthief
+RUN pip install fastapi uvicorn torch opencv-python pillow pandas torchvision jinja2 python-multipart 
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
