@@ -31,7 +31,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip freeze > requirements.txt   
-        pip install pytest uvicorn fastapi httpx torch opencv-python pillow scikit-learn pandas torchvision jinja2 python-multipart
+        pip install fast-colorthief pytest uvicorn fastapi httpx torch opencv-python pillow scikit-learn pandas torchvision jinja2 python-multipart
     - name: Run pytest
       run: | 
         pytest
