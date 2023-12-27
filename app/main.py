@@ -16,16 +16,6 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.cluster import KMeans
 import fast_colorthief
-color2rgb={'Navy Blue': (0,0,128), 'Blue': (0,0,255), 'Silver': (245,245,245), 'Black': (45,45,45), 'Grey': (128,128,128), 'Green': (0,255,0), 'Purple': (128,0,128), 'White': (255,255,255), 'Beige':(245,245,220), 'Brown': (165,42,42),'Teal':(0,128,128), 'Pink':(255, 192, 203), 'Off White':(250, 249, 246), 'Maroon':(128,0,0), 'Red': (255,0,0), 'Khaki':(240, 230, 140), 'Orange': (255, 165, 0),'Yellow':(255, 255, 0), 'Charcoal': (85,85,85), 'Gold': (255, 215, 0), 'Steel': (113, 121, 126), 'Tan':(210, 180, 140), 'Magenta': (255, 0, 255), 'Lavender': (230, 230, 250),'Cream':(255, 253, 208), 'Peach': (255, 229, 180), 'Olive': (128, 128, 0), 'Skin': (232, 190, 172), 'Grey Melange': (204,202,201) }
-color=pd.DataFrame(color2rgb)
-color=color.T
-color.reset_index(level=0, inplace=True) 
-color.rename(columns = {'index':'color'}, inplace = True) 
-y=color['color']
-x=color.drop('color',axis=1)
-clf=KNeighborsClassifier(n_neighbors=1)
-clf.fit(x,y)
-model = KMeans(n_clusters=3, random_state=42)
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
